@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chokies Burgers | Premium Taste</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">CHOKIES <span>BURGERS</span></div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search menu..." onkeyup="searchProduct()">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-basket"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Taste the Difference. Taste Chokies.</h1>
+        <p>Fresh ingredients, bold flavors, unforgettable experience.</p>
+    </section>
+
+    <main class="menu-container">
+        <h2 class="section-title">Our Delicious Menu</h2>
+
+        <section class="menu-category" id="tacos">
+            <h3>TACOS</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Viand haché</h4><span class="price">39 DH</span><button onclick="addToCart('Viand haché', 39)">+</button></div>
+                <div class="menu-item"><h4>Poulet</h4><span class="price">35 DH</span><button onclick="addToCart('Poulet', 35)">+</button></div>
+                <div class="menu-item"><h4>Kebab</h4><span class="price">35 DH</span><button onclick="addToCart('Kebab', 35)">+</button></div>
+                <div class="menu-item"><h4>Nugget</h4><span class="price">30 DH</span><button onclick="addToCart('Nugget', 30)">+</button></div>
+                <div class="menu-item"><h4>Tander</h4><span class="price">35 DH</span><button onclick="addToCart('Tander', 35)">+</button></div>
+                <div class="menu-item"><h4>Cordon blue</h4><span class="price">32 DH</span><button onclick="addToCart('Cordon blue', 32)">+</button></div>
+                <div class="menu-item"><h4>Merguez</h4><span class="price">39 DH</span><button onclick="addToCart('Merguez', 39)">+</button></div>
+            </div>
+            <h4>Special Maison</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Crunchy</h4><span class="price">39 DH</span><button onclick="addToCart('Tacos Crunchy', 39)">+</button></div>
+                <div class="menu-item"><h4>Gratiné</h4><span class="price">39 DH</span><button onclick="addToCart('Tacos Gratiné', 39)">+</button></div>
+                <div class="menu-item"><h4>Kochari</h4><span class="price">39 DH</span><button onclick="addToCart('Tacos Kochari', 39)">+</button></div>
+            </div>
+            <h4>Sauces</h4>
+            <div class="menu-items-grid sauces-grid">
+                <span>Mayonnaise</span><span>Ketchup</span><span>BBQ</span><span>Blanche</span>
+                <span>Hannibal</span><span>Poivre</span><span>Biggy</span><span>Algérienne</span>
+                <span>Samouraï</span><span>Chili Thai</span><span>Harissa</span><span>Andalouse</span>
+            </div>
+        </section>
+
+        <section class="menu-category" id="sandwiches">
+            <h3>SANDWICHES XL</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Sandwich deux poulet</h4><span class="price">42 DH</span><button onclick="addToCart('Sandwich deux poulet XL', 42)">+</button></div>
+                <div class="menu-item"><h4>Sandwich méditerranéen</h4><span class="price">42 DH</span><button onclick="addToCart('Sandwich méditerranéen XL', 42)">+</button></div>
+                <div class="menu-item"><h4>Sandwich mexican</h4><span class="price">44 DH</span><button onclick="addToCart('Sandwich mexican XL', 44)">+</button></div>
+                <div class="menu-item"><h4>Sandwich japonais</h4><span class="price">45 DH</span><button onclick="addToCart('Sandwich japonais XL', 45)">+</button></div>
+                <div class="menu-item"><h4>Sandwich turc</h4><span class="price">45 DH</span><button onclick="addToCart('Sandwich turc XL', 45)">+</button></div>
+                <div class="menu-item"><h4>Sandwich poulet crunchy</h4><span class="price">45 DH</span><button onclick="addToCart('Sandwich poulet crunchy XL', 45)">+</button></div>
+                <div class="menu-item"><h4>Sandwich tandori</h4><span class="price">48 DH</span><button onclick="addToCart('Sandwich tandori XL', 48)">+</button></div>
+                <div class="menu-item"><h4>Sandwich tikka</h4><span class="price">49 DH</span><button onclick="addToCart('Sandwich tikka XL', 49)">+</button></div>
+                <div class="menu-item"><h4>Poulet à la crème</h4><span class="price">52 DH</span><button onclick="addToCart('Poulet à la crème XL', 52)">+</button></div>
+                <div class="menu-item"><h4>Sandwich chèvre miel</h4><span class="price">52 DH</span><button onclick="addToCart('Sandwich chèvre miel XL', 52)">+</button></div>
+                <div class="menu-item"><h4>Sandwich steak haché</h4><span class="price">52 DH</span><button onclick="addToCart('Sandwich steak haché XL', 52)">+</button></div>
+                <div class="menu-item"><h4>Sandwich trois viande</h4><span class="price">56 DH</span><button onclick="addToCart('Sandwich trois viande XL', 56)">+</button></div>
+                <div class="menu-item"><h4>Sandwich sollomio</h4><span class="price">95 DH</span><button onclick="addToCart('Sandwich sollomio XL', 95)">+</button></div>
+                <div class="menu-item"><h4>Sandwich big chokies</h4><span class="price">140 DH</span><button onclick="addToCart('Sandwich big chokies XL', 140)">+</button></div>
+                <div class="menu-item"><h4>Sandwich tomahawk</h4><span class="price">199 DH</span><button onclick="addToCart('Sandwich tomahawk XL', 199)">+</button></div>
+            </div>
+            <h3>SANDWICHES L</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Sandwich deux poulet</h4><span class="price">26 DH</span><button onclick="addToCart('Sandwich deux poulet L', 26)">+</button></div>
+                <div class="menu-item"><h4>Sandwich méditerranéen</h4><span class="price">26 DH</span><button onclick="addToCart('Sandwich méditerranéen L', 26)">+</button></div>
+                <div class="menu-item"><h4>Sandwich mexican</h4><span class="price">28 DH</span><button onclick="addToCart('Sandwich mexican L', 28)">+</button></div>
+                <div class="menu-item"><h4>Sandwich japonais</h4><span class="price">29 DH</span><button onclick="addToCart('Sandwich japonais L', 29)">+</button></div>
+                <div class="menu-item"><h4>Sandwich turc</h4><span class="price">29 DH</span><button onclick="addToCart('Sandwich turc L', 29)">+</button></div>
+                <div class="menu-item"><h4>Sandwich poulet crunchy</h4><span class="price">29 DH</span><button onclick="addToCart('Sandwich poulet crunchy L', 29)">+</button></div>
+                <div class="menu-item"><h4>Sandwich tandori</h4><span class="price">32 DH</span><button onclick="addToCart('Sandwich tandori L', 32)">+</button></div>
+                <div class="menu-item"><h4>Sandwich tikka</h4><span class="price">33 DH</span><button onclick="addToCart('Sandwich tikka L', 33)">+</button></div>
+                <div class="menu-item"><h4>Poulet à la crème</h4><span class="price">36 DH</span><button onclick="addToCart('Poulet à la crème L', 36)">+</button></div>
+                <div class="menu-item"><h4>Sandwich chèvre miel</h4><span class="price">36 DH</span><button onclick="addToCart('Sandwich chèvre miel L', 36)">+</button></div>
+                <div class="menu-item"><h4>Sandwich steak haché</h4><span class="price">36 DH</span><button onclick="addToCart('Sandwich steak haché L', 36)">+</button></div>
+                <div class="menu-item"><h4>Sandwich trois viande</h4><span class="price">40 DH</span><button onclick="addToCart('Sandwich trois viande L', 40)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="burdwish">
+            <h3>BURDWISH</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Mexican</h4><span class="price">52 DH</span><button onclick="addToCart('Burdwish Mexican', 52)">+</button></div>
+                <div class="menu-item"><h4>4 fromage</h4><span class="price">62 DH</span><button onclick="addToCart('Burdwish 4 fromage', 62)">+</button></div>
+                <div class="menu-item"><h4>Gambita</h4><span class="price">84 DH</span><button onclick="addToCart('Burdwish Gambita', 84)">+</button></div>
+                <div class="menu-item"><h4>Calamardo</h4><span class="price">84 DH</span><button onclick="addToCart('Burdwish Calamardo', 84)">+</button></div>
+                <div class="menu-item"><h4>Italien</h4><span class="price">54 DH</span><button onclick="addToCart('Burdwish Italien', 54)">+</button></div>
+                <div class="menu-item"><h4>Triple X</h4><span class="price">65 DH</span><button onclick="addToCart('Burdwish Triple X', 65)">+</button></div>
+                <div class="menu-item"><h4>Crunchy</h4><span class="price">52 DH</span><button onclick="addToCart('Burdwish Crunchy', 52)">+</button></div>
+                <div class="menu-item"><h4>Mix</h4><span class="price">56 DH</span><button onclick="addToCart('Burdwish Mix', 56)">+</button></div>
+                <div class="menu-item"><h4>Say sheese</h4><span class="price">54 DH</span><button onclick="addToCart('Burdwish Say sheese', 54)">+</button></div>
+                <div class="menu-item"><h4>Fruit de mer</h4><span class="price">79 DH</span><button onclick="addToCart('Burdwish Fruit de mer', 79)">+</button></div>
+                <div class="menu-item"><h4>Saumon</h4><span class="price">109 DH</span><button onclick="addToCart('Burdwish Saumon', 109)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="pizza">
+            <h3>PIZZA</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>La Marguerita</h4><div class="price-btns"><button onclick="addToCart('Marguerita (S)', 34)">S 34DH</button><button onclick="addToCart('Marguerita (L)', 51)">L 51DH</button></div></div>
+                <div class="menu-item"><h4>La Calzone</h4><div class="price-btns"><button onclick="addToCart('Calzone (S)', 36)">S 36DH</button><button onclick="addToCart('Calzone (L)', 53)">L 53DH</button></div></div>
+                <div class="menu-item"><h4>La Végétarienne</h4><div class="price-btns"><button onclick="addToCart('Végétarienne (S)', 35)">S 35DH</button><button onclick="addToCart('Végétarienne (L)', 52)">L 52DH</button></div></div>
+                <div class="menu-item"><h4>La Reine</h4><div class="price-btns"><button onclick="addToCart('Reine (S)', 36)">S 36DH</button><button onclick="addToCart('Reine (L)', 53)">L 53DH</button></div></div>
+                <div class="menu-item"><h4>La 4 Fromages</h4><div class="price-btns"><button onclick="addToCart('4 Fromages (S)', 56)">S 56DH</button><button onclick="addToCart('4 Fromages (L)', 88)">L 88DH</button></div></div>
+                <div class="menu-item"><h4>La Fruits De Mer</h4><div class="price-btns"><button onclick="addToCart('Fruits De Mer (S)', 55)">S 55DH</button><button onclick="addToCart('Fruits De Mer (L)', 72)">L 72DH</button></div></div>
+                <div class="menu-item"><h4>La Régina</h4><div class="price-btns"><button onclick="addToCart('Régina (S)', 45)">S 45DH</button><button onclick="addToCart('Régina (L)', 62)">L 62DH</button></div></div>
+                <div class="menu-item"><h4>La pécheur</h4><div class="price-btns"><button onclick="addToCart('pécheur (S)', 36)">S 36DH</button><button onclick="addToCart('pécheur (L)', 53)">L 53DH</button></div></div>
+                <div class="menu-item"><h4>La campione</h4><div class="price-btns"><button onclick="addToCart('campione (S)', 36)">S 36DH</button><button onclick="addToCart('campione (L)', 53)">L 53DH</button></div></div>
+                <div class="menu-item"><h4>L’oriental</h4><div class="price-btns"><button onclick="addToCart('oriental (S)', 36)">S 36DH</button><button onclick="addToCart('oriental (L)', 53)">L 53DH</button></div></div>
+                <div class="menu-item"><h4>La 4 saison</h4><div class="price-btns"><button onclick="addToCart('4 saison (S)', 55)">S 55DH</button><button onclick="addToCart('4 saison (L)', 72)">L 72DH</button></div></div>
+                <div class="menu-item"><h4>La Mexicaine</h4><div class="price-btns"><button onclick="addToCart('Mexicaine (S)', 42)">S 42DH</button><button onclick="addToCart('Mexicaine (L)', 59)">L 59DH</button></div></div>
+                <div class="menu-item"><h4>La Western</h4><div class="price-btns"><button onclick="addToCart('Western (S)', 45)">S 45DH</button><button onclick="addToCart('Western (L)', 62)">L 62DH</button></div></div>
+                <div class="menu-item"><h4>La Chicken</h4><div class="price-btns"><button onclick="addToCart('Chicken (S)', 42)">S 42DH</button><button onclick="addToCart('Chicken (L)', 59)">L 59DH</button></div></div>
+                <div class="menu-item"><h4>La Paysanne</h4><div class="price-btns"><button onclick="addToCart('Paysanne (S)', 42)">S 42DH</button><button onclick="addToCart('Paysanne (L)', 59)">L 59DH</button></div></div>
+                <div class="menu-item"><h4>La Buffalo</h4><div class="price-btns"><button onclick="addToCart('Buffalo (S)', 65)">S 65DH</button><button onclick="addToCart('Buffalo (L)', 82)">L 82DH</button></div></div>
+                <div class="menu-item"><h4>La Bollywood</h4><div class="price-btns"><button onclick="addToCart('Bollywood (S)', 65)">S 65DH</button><button onclick="addToCart('Bollywood (L)', 82)">L 82DH</button></div></div>
+                <div class="menu-item"><h4>La Chèvre Miel</h4><div class="price-btns"><button onclick="addToCart('Chèvre Miel (S)', 65)">S 65DH</button><button onclick="addToCart('Chèvre Miel (L)', 82)">L 82DH</button></div></div>
+                <div class="menu-item"><h4>La chokies Burger</h4><div class="price-btns"><button onclick="addToCart('chokies Burger (S)', 75)">S 75DH</button><button onclick="addToCart('chokies Burger (L)', 92)">L 92DH</button></div></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="shawarma">
+            <h3>SHAWARMA</h3>
+            <h4>Shawarma</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Shawarma Simple</h4><span class="price">20DH</span><button onclick="addToCart('Shawarma Simple', 20)">+</button></div>
+                <div class="menu-item"><h4>Shawarma + Frites</h4><span class="price">25DH</span><button onclick="addToCart('Shawarma + Frites', 25)">+</button></div>
+                <div class="menu-item"><h4>Shawarma XL</h4><span class="price">35DH</span><button onclick="addToCart('Shawarma XL', 35)">+</button></div>
+                <div class="menu-item"><h4>Shawarma XXL</h4><span class="price">45DH</span><button onclick="addToCart('Shawarma XXL', 45)">+</button></div>
+            </div>
+            <h4>Shawarma Plat</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Shawarma Plat Simple</h4><span class="price">45DH</span><button onclick="addToCart('Shawarma Plat Simple', 45)">+</button></div>
+                <div class="menu-item"><h4>Shawarma Plat Special</h4><span class="price">55DH</span><button onclick="addToCart('Shawarma Plat Special', 55)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="burgers">
+            <h3>BURGERS</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Burger Poulet Chhawarma</h4><span class="price">18DH</span><button onclick="addToCart('Burger Poulet Chhawarma', 18)">+</button></div>
+                <div class="menu-item"><h4>Burger Viand Haché</h4><span class="price">25DH</span><button onclick="addToCart('Burger Viand Haché', 25)">+</button></div>
+                <div class="menu-item"><h4>Burger Cocorico</h4><span class="price">34DH</span><button onclick="addToCart('Burger Cocorico', 34)">+</button></div>
+                <div class="menu-item"><h4>Burger Cheddar</h4><span class="price">37DH</span><button onclick="addToCart('Burger Cheddar', 37)">+</button></div>
+                <div class="menu-item"><h4>Burger Cocorico Crunch</h4><span class="price">53DH</span><button onclick="addToCart('Burger Cocorico Crunch', 53)">+</button></div>
+                <div class="menu-item"><h4>Burger Double Steak</h4><span class="price">57DH</span><button onclick="addToCart('Burger Double Steak', 57)">+</button></div>
+                <div class="menu-item"><h4>Burger Chèvre Au Miel</h4><span class="price">58DH</span><button onclick="addToCart('Burger Chèvre Au Miel', 58)">+</button></div>
+                <div class="menu-item"><h4>Burger Gonzalo Roberto</h4><span class="price">78DH</span><button onclick="addToCart('Burger Gonzalo Roberto', 78)">+</button></div>
+                <div class="menu-item"><h4>Burger Trois Steak</h4><span class="price">97DH</span><button onclick="addToCart('Burger Trois Steak', 97)">+</button></div>
+                <div class="menu-item"><h4>Burger Sollomio</h4><span class="price">99DH</span><button onclick="addToCart('Burger Sollomio', 99)">+</button></div>
+                <div class="menu-item"><h4>Monster Burger</h4><span class="price">170DH</span><button onclick="addToCart('Monster Burger', 170)">+</button></div>
+                <div class="menu-item"><h4>Burger Tomahawk</h4><span class="price">204DH</span><button onclick="addToCart('Burger Tomahawk', 204)">+</button></div>
+                <div class="menu-item"><h4>Extra Sauce Fromagère</h4><span class="price">25DH</span><button onclick="addToCart('Extra Sauce Fromagère', 25)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="plats-extras">
+            <h3>PLATS & EXTRAS</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Ris Thaïlandaise</h4><span class="price">25DH</span><button onclick="addToCart('Ris Thaïlandaise', 25)">+</button></div>
+                <div class="menu-item"><h4>Penne Poulet</h4><span class="price">25DH</span><button onclick="addToCart('Penne Poulet', 25)">+</button></div>
+                <div class="menu-item"><h4>Kochari</h4><span class="price">18DH</span><button onclick="addToCart('Kochari', 18)">+</button></div>
+                <div class="menu-item"><h4>FriSheese</h4><span class="price">22DH</span><button onclick="addToCart('FriSheese', 22)">+</button></div>
+            </div>
+            <h4>Chicken</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>1 Pilon</h4><span class="price">10 DH</span><button onclick="addToCart('1 Pilon', 10)">+</button></div>
+                <div class="menu-item"><h4>5 Ailes (Wings)</h4><span class="price">25 DH</span><button onclick="addToCart('5 Ailes (Wings)', 25)">+</button></div>
+                <div class="menu-item"><h4>1/2 Poulet</h4><span class="price">40 DH</span><button onclick="addToCart('1/2 Poulet', 40)">+</button></div>
+                <div class="menu-item"><h4>Poulet كامل</h4><span class="price">70 DH</span><button onclick="addToCart('Poulet كامل', 70)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="plats-riz">
+            <h3>PLATS AVEC RIZ</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Plat 3 Pilons</h4><span class="price">49 DH</span><button onclick="addToCart('Plat 3 Pilons', 49)">+</button></div>
+                <div class="menu-item"><h4>Plat 2 Wings</h4><span class="price">40 DH</span><button onclick="addToCart('Plat 2 Wings', 40)">+</button></div>
+                <div class="menu-item"><h4>Plat 1/2 Poulet</h4><span class="price">60 DH</span><button onclick="addToCart('Plat 1/2 Poulet', 60)">+</button></div>
+                <div class="menu-item"><h4>Plat 1 Poulet</h4><span class="price">95 DH</span><button onclick="addToCart('Plat 1 Poulet', 95)">+</button></div>
+                <div class="menu-item"><h4>Plat 1 Pilon</h4><span class="price">35 DH</span><button onclick="addToCart('Plat 1 Pilon', 35)">+</button></div>
+                <div class="menu-item"><h4>Plat 2 Pilons</h4><span class="price">43 DH</span><button onclick="addToCart('Plat 2 Pilons', 43)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="boissons">
+            <h3>BOISSONS</h3>
+            <h4>Jus</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Orange</h4><span class="price">18 DH</span><button onclick="addToCart('Jus Orange', 18)">+</button></div>
+                <div class="menu-item"><h4>Pomme</h4><span class="price">18 DH</span><button onclick="addToCart('Jus Pomme', 18)">+</button></div>
+                <div class="menu-item"><h4>Banane</h4><span class="price">18 DH</span><button onclick="addToCart('Jus Banane', 18)">+</button></div>
+                <div class="menu-item"><h4>Fraise</h4><span class="price">23 DH</span><button onclick="addToCart('Jus Fraise', 23)">+</button></div>
+                <div class="menu-item"><h4>Papaye</h4><span class="price">23 DH</span><button onclick="addToCart('Jus Papaye', 23)">+</button></div>
+                <div class="menu-item"><h4>Mangue</h4><span class="price">25 DH</span><button onclick="addToCart('Jus Mangue', 25)">+</button></div>
+                <div class="menu-item"><h4>Kiwi</h4><span class="price">27 DH</span><button onclick="addToCart('Jus Kiwi', 27)">+</button></div>
+                <div class="menu-item"><h4>Kaki</h4><span class="price">25 DH</span><button onclick="addToCart('Jus Kaki', 25)">+</button></div>
+                <div class="menu-item"><h4>Pêche</h4><span class="price">25 DH</span><button onclick="addToCart('Jus Pêche', 25)">+</button></div>
+                <div class="menu-item"><h4>Ananas</h4><span class="price">25 DH</span><button onclick="addToCart('Jus Ananas', 25)">+</button></div>
+                <div class="menu-item"><h4>Fruit du dragon</h4><span class="price">30 DH</span><button onclick="addToCart('Fruit du dragon', 30)">+</button></div>
+                <div class="menu-item"><h4>Citron</h4><span class="price">19 DH</span><button onclick="addToCart('Jus Citron', 19)">+</button></div>
+                <div class="menu-item"><h4>Citronad</h4><span class="price">22 DH</span><button onclick="addToCart('Citronad', 22)">+</button></div>
+                <div class="menu-item"><h4>Panache</h4><span class="price">25 DH</span><button onclick="addToCart('Panache', 25)">+</button></div>
+            </div>
+            <h4>Mojito / Cocktails</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Classique</h4><span class="price">22 DH</span><button onclick="addToCart('Mojito Classique', 22)">+</button></div>
+                <div class="menu-item"><h4>Fruit rouge</h4><span class="price">28 DH</span><button onclick="addToCart('Mojito Fruit rouge', 28)">+</button></div>
+                <div class="menu-item"><h4>Blue</h4><span class="price">27 DH</span><button onclick="addToCart('Mojito Blue', 27)">+</button></div>
+                <div class="menu-item"><h4>Tropicool</h4><span class="price">40 DH</span><button onclick="addToCart('Mojito Tropicool', 40)">+</button></div>
+                <div class="menu-item"><h4>Passion</h4><span class="price">30 DH</span><button onclick="addToCart('Mojito Passion', 30)">+</button></div>
+                <div class="menu-item"><h4>Fraise</h4><span class="price">30 DH</span><button onclick="addToCart('Mojito Fraise', 30)">+</button></div>
+                <div class="menu-item"><h4>Framboise</h4><span class="price">30 DH</span><button onclick="addToCart('Mojito Framboise', 30)">+</button></div>
+                <div class="menu-item"><h4>Tropical</h4><span class="price">30 DH</span><button onclick="addToCart('Mojito Tropical', 30)">+</button></div>
+            </div>
+            <h4>Avocat & Spécial</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Solo avocat</h4><span class="price">25 DH</span><button onclick="addToCart('Solo avocat', 25)">+</button></div>
+                <div class="menu-item"><h4>Fruit secs</h4><span class="price">33 DH</span><button onclick="addToCart('Jus Fruit secs', 33)">+</button></div>
+                <div class="menu-item"><h4>Chocolat</h4><span class="price">33 DH</span><button onclick="addToCart('Jus Chocolat', 33)">+</button></div>
+                <div class="menu-item"><h4>Gingembre</h4><span class="price">30 DH</span><button onclick="addToCart('Jus Gingembre', 30)">+</button></div>
+                <div class="menu-item"><h4>Z3ze3</h4><span class="price">42 DH</span><button onclick="addToCart('Z3ze3', 42)">+</button></div>
+            </div>
+            <h4>Milkshakes</h4>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Milkshake chocolat</h4><span class="price">30 DH</span><button onclick="addToCart('Milkshake chocolat', 30)">+</button></div>
+                <div class="menu-item"><h4>Milkshake fraise</h4><span class="price">30 DH</span><button onclick="addToCart('Milkshake fraise', 30)">+</button></div>
+                <div class="menu-item"><h4>Milkshake vanille</h4><span class="price">30 DH</span><button onclick="addToCart('Milkshake vanille', 30)">+</button></div>
+                <div class="menu-item"><h4>Milkshake pistage</h4><span class="price">30 DH</span><button onclick="addToCart('Milkshake pistage', 30)">+</button></div>
+            </div>
+        </section>
+
+        <section class="menu-category" id="desserts">
+            <h3>DESSERTS</h3>
+            <div class="menu-items-grid">
+                <div class="menu-item"><h4>Riz au lait Vanille</h4><span class="price">15 DH</span><button onclick="addToCart('Riz au lait Vanille', 15)">+</button></div>
+                <div class="menu-item"><h4>Riz au lait Exotic (Mangue - Ananas)</h4><span class="price">18 DH</span><button onclick="addToCart('Riz au lait Exotic', 18)">+</button></div>
+                <div class="menu-item"><h4>Tiramisu</h4><span class="price">20 DH</span><button onclick="addToCart('Tiramisu', 20)">+</button></div>
+                <div class="menu-item"><h4>Flan aux oeufs</h4><span class="price">10 DH</span><button onclick="addToCart('Flan aux oeufs', 10)">+</button></div>
+                <div class="menu-item"><h4>Panna Cotta</h4><span class="price">20 DH</span><button onclick="addToCart('Panna Cotta', 20)">+</button></div>
+                <div class="menu-item"><h4>Creme Brulee</h4><span class="price">16 DH</span><button onclick="addToCart('Creme Brulee', 16)">+</button></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Side Cart -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="cartTotal">0.00</span> DH</div>
+            <div class="table-input">
+                <label for="tableNumber">N° de Table:</label>
+                <input type="number" id="tableNumber" placeholder="Facultatif (Pour la salle)">
+            </div>
+            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            document.getElementById('cartSidebar').classList.toggle('active');
+        }
+
+        function addToCart(name, price) {
+            const exists = cart.find(item => item.name === name);
+            if (exists) {
+                exists.quantity++;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartList = document.getElementById('cartItems');
+            const count = document.getElementById('cart-count');
+            const totalEl = document.getElementById('cartTotal');
+            
+            count.innerText = cart.reduce((acc, item) => acc + item.quantity, 0);
+            
+            cartList.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div>
+                        <h4>${item.name}</h4>
+                        <p>${item.price} x ${item.quantity} DH</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})">&times;</button>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            totalEl.innerText = total.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function searchProduct() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.menu-item');
+            items.forEach(item => {
+                const text = item.querySelector('h4').innerText.toLowerCase();
+                item.style.display = text.includes(term) ? 'flex' : 'none';
+            });
+        }
+
+        function sendToWhatsApp() {
+            if (cart.length === 0) return alert("Le panier est vide!");
+            const tableNum = document.getElementById('tableNumber').value;
+            let phoneNumber = "212616461578";
+            let message = "Salaam Chokies Burgers! ";
+            message += tableNum ? `Order mn Table: ${tableNum}\n\n` : `Order dyal Livraison\n\n`;
+            cart.forEach(item => {
+                message += `• ${item.name} (x${item.quantity}) - ${item.price * item.quantity} DH\n`;
+            });
+            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            message += `\n*Total: ${total} DH*`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023 Chokies Burgers. All rights reserved.</p>
+    </footer>
+</body>
+</html>
