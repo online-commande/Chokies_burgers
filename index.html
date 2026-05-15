@@ -6,32 +6,45 @@
     <title>Chokies Burgers | Premium Taste</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo">CHOKIES <span>BURGERS</span></div>
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search menu..." onkeyup="searchProduct()">
+                <input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchProduct()">
                 <i class="fas fa-search"></i>
             </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-basket"></i>
-                <span id="cart-count">0</span>
+            <div class="nav-actions">
+                <div class="lang-switch">
+                    <button onclick="changeLanguage('fr')" id="lang-fr" class="active">FR</button>
+                    <button onclick="changeLanguage('ar')" id="lang-ar">AR</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span id="cart-count">0</span>
+                </div>
             </div>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Taste the Difference. Taste Chokies.</h1>
-        <p>Fresh ingredients, bold flavors, unforgettable experience.</p>
+        <div class="hero-content" id="hero-text">
+            <h1 data-key="hero-title">Taste the Difference. <br><span>Taste Chokies.</span></h1>
+            <p data-key="hero-desc">Fresh ingredients, bold flavors, unforgettable experience.</p>
+            <div class="hero-ctas">
+                <a href="#tacos" class="cta-btn primary" data-key="btn-order">Commander maintenant</a>
+                <a href="#tacos" class="cta-btn secondary" data-key="btn-menu">Voir le menu</a>
+            </div>
+        </div>
     </section>
 
     <main class="menu-container">
-        <h2 class="section-title">Our Delicious Menu</h2>
+        <h2 class="section-title" data-key="menu-title">Our Delicious Menu</h2>
 
         <section class="menu-category" id="tacos">
-            <h3>TACOS</h3>
+            <h3 data-key="cat-tacos">TACOS</h3>
             <div class="menu-items-grid">
                 <div class="menu-item"><h4>Viand haché</h4><span class="price">39 DH</span><button onclick="addToCart('Viand haché', 39)">+</button></div>
                 <div class="menu-item"><h4>Poulet</h4><span class="price">35 DH</span><button onclick="addToCart('Poulet', 35)">+</button></div>
@@ -49,9 +62,18 @@
             </div>
             <h4>Sauces</h4>
             <div class="menu-items-grid sauces-grid">
-                <span>Mayonnaise</span><span>Ketchup</span><span>BBQ</span><span>Blanche</span>
-                <span>Hannibal</span><span>Poivre</span><span>Biggy</span><span>Algérienne</span>
-                <span>Samouraï</span><span>Chili Thai</span><span>Harissa</span><span>Andalouse</span>
+                <div class="menu-item"><h4>Mayonnaise</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Mayonnaise', 2)">+</button></div>
+                <div class="menu-item"><h4>Ketchup</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Ketchup', 2)">+</button></div>
+                <div class="menu-item"><h4>BBQ</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce BBQ', 2)">+</button></div>
+                <div class="menu-item"><h4>Blanche</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Blanche', 2)">+</button></div>
+                <div class="menu-item"><h4>Hannibal</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Hannibal', 2)">+</button></div>
+                <div class="menu-item"><h4>Poivre</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Poivre', 2)">+</button></div>
+                <div class="menu-item"><h4>Biggy</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Biggy', 2)">+</button></div>
+                <div class="menu-item"><h4>Algérienne</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Algérienne', 2)">+</button></div>
+                <div class="menu-item"><h4>Samouraï</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Samouraï', 2)">+</button></div>
+                <div class="menu-item"><h4>Chili Thai</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Chili Thai', 2)">+</button></div>
+                <div class="menu-item"><h4>Harissa</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Harissa', 2)">+</button></div>
+                <div class="menu-item"><h4>Andalouse</h4><span class="price">2 DH</span><button onclick="addToCart('Sauce Andalouse', 2)">+</button></div>
             </div>
         </section>
 
@@ -260,24 +282,112 @@
     <!-- Side Cart -->
     <div id="cartSidebar" class="cart-sidebar">
         <div class="cart-header">
-            <h3>Votre Panier</h3>
+            <h3 data-key="cart-title">Votre Panier</h3>
             <span class="close-cart" onclick="toggleCart()">&times;</span>
         </div>
         <div id="cartItems" class="cart-items"></div>
         <div class="cart-footer">
-            <div class="total">Total: <span id="cartTotal">0.00</span> DH</div>
+            <div class="total"><span data-key="cart-total">Total:</span> <span id="cartTotal">0.00</span> DH</div>
             <div class="table-input">
-                <label for="tableNumber">N° de Table:</label>
-                <input type="number" id="tableNumber" placeholder="Facultatif (Pour la salle)">
+                <label for="tableNumber" data-key="table-label">N° de Table:</label>
+                <input type="number" id="tableNumber" placeholder="Ex: 5">
+                <small class="table-help" data-key="table-help">Si vous êtes sur place, merci de préciser votre numéro de table.</small>
             </div>
-            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+            <button class="btn-whatsapp" onclick="sendToWhatsApp()" data-key="btn-wa">
                 <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
             </button>
         </div>
     </div>
 
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 data-key="footer-hours"><i class="fas fa-clock"></i> Horaires</h4>
+                <p data-key="hours-week">Lundi - Dimanche: 12:00 - 00:00</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-key="footer-loc"><i class="fas fa-map-marker-alt"></i> Localisation</h4>
+                <p data-key="loc-addr">BAB SAIDA, 61 Av.Mohamed Seffar,</p>
+                <p data-key="loc-city">Tetouan, Maroc</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-key="footer-social"><i class="fas fa-share-alt"></i> Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/chokies_burger_house?igsh=NjI2am5xZnBoN2R5"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/18Wjn1EcFA/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@chokies.burger.house?_r=1&_t=ZS-96MqcSobZVC"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Chokies Burgers. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
         let cart = [];
+        let currentLang = 'fr';
+
+        const translations = {
+            fr: {
+                "hero-title": "Taste the Difference. <br><span>Taste Chokies.</span>",
+                "hero-desc": "Fresh ingredients, bold flavors, unforgettable experience.",
+                "btn-order": "Commander maintenant",
+                "btn-menu": "Voir le menu",
+                "menu-title": "Our Delicious Menu",
+                "cat-tacos": "TACOS",
+                "cart-title": "Votre Panier",
+                "cart-total": "Total:",
+                "table-label": "N° de Table:",
+                "table-help": "Si vous êtes sur place, merci de préciser votre numéro de table.",
+                "btn-wa": "Commander sur WhatsApp",
+                "footer-hours": "Horaires",
+                "hours-week": "Lundi - Dimanche: 12:00 - 00:00",
+                "footer-loc": "Localisation",
+                "footer-social": "Suivez-nous",
+                "search-ph": "Rechercher..."
+            },
+            ar: {
+                "hero-title": "ذق الفرق. <br><span>ذق شوكيز.</span>",
+                "hero-desc": "مكونات طازجة، نكهات قوية، تجربة لا تنسى.",
+                "btn-order": "اطلب الآن",
+                "btn-menu": "عرض القائمة",
+                "menu-title": "قائمتنا اللذيذة",
+                "cart-title": "سلتك",
+                "cart-total": "المجموع:",
+                "table-label": "رقم الطاولة:",
+                "table-help": "إذا كنت في المطعم، يرجى تحديد رقم طاولتك.",
+                "btn-wa": "اطلب عبر واتساب",
+                "footer-hours": "ساعات العمل",
+                "hours-week": "الاثنين - الأحد: 12:00 - 00:00",
+                "footer-loc": "الموقع",
+                "loc-addr": "ياب الصعيدة، 61 شارع محمد الصفار",
+                "loc-city": "تطوان، المغرب",
+                "footer-social": "تابعنا",
+                "search-ph": "بحث عن منتج..."
+            }
+        };
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            document.body.classList.toggle('rtl-mode', lang === 'ar');
+            
+            // Update UI texts
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                el.innerHTML = translations[lang][key];
+            });
+
+            // Update search placeholder
+            document.getElementById('searchInput').placeholder = translations[lang]['search-ph'];
+            
+            // Toggle active button
+            document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
+            
+            updateCartUI();
+        }
 
         function toggleCart() {
             document.getElementById('cartSidebar').classList.toggle('active');
@@ -342,8 +452,5 @@
             window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
-    <footer>
-        <p>&copy; 2023 Chokies Burgers. All rights reserved.</p>
-    </footer>
 </body>
 </html>
