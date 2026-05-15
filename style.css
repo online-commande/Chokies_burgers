@@ -114,7 +114,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('./images/burger-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,6 +190,13 @@ nav ul li a:hover {
 .search-box {
     position: relative;
     width: 30%;
+}
+@media (max-width: 768px) {
+    .search-box { 
+        width: 100% !important; 
+        margin: 15px 0; 
+    }
+    .nav-actions { width: 100%; justify-content: center; }
 }
 .search-box input {
     width: 100%;
