@@ -361,7 +361,7 @@
                 "footer-hours": "ساعات العمل",
                 "hours-week": "الاثنين - الأحد: 12:00 - 00:00",
                 "footer-loc": "الموقع",
-                "loc-addr": "ياب الصعيدة، 61 شارع محمد الصفار",
+                "loc-addr": "باب الصعيدة، 61 شارع محمد الصفار",
                 "loc-city": "تطوان، المغرب",
                 "footer-social": "تابعنا",
                 "search-ph": "بحث عن منتج..."
@@ -379,10 +379,8 @@
                 el.innerHTML = translations[lang][key];
             });
 
-            // Update search placeholder
             document.getElementById('searchInput').placeholder = translations[lang]['search-ph'];
             
-            // Toggle active button
             document.getElementById('lang-fr').classList.toggle('active', lang === 'fr');
             document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
             

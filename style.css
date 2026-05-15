@@ -3,10 +3,10 @@
 :root {
     --dark-bg: #1a1a1a;
     --text-light: #f0f0f0;
-    --accent-orange: #ff8c00; /* DarkOrange */
-    --accent-red: #e63946; /* Vibrant Red */
-    --accent-yellow: #ffd700; /* Gold */
-    --neon-glow: rgba(255, 140, 0, 0.5); /* Orange glow */
+    --accent-orange: #ff8c00;
+    --accent-red: #e63946;
+    --accent-yellow: #ffd700;
+    --neon-glow: rgba(255, 140, 0, 0.5);
     --section-bg-darker: #0d0d0d;
 }
 
@@ -25,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Navigation */
 header {
     background: var(--section-bg-darker);
     padding: 1rem 5%;
@@ -73,7 +72,6 @@ header {
     color: white;
 }
 
-/* RTL Adjustments */
 body.rtl-mode { font-family: 'Cairo', sans-serif; }
 
 .logo {
@@ -111,7 +109,6 @@ nav ul li a:hover {
     text-shadow: 0 0 8px var(--neon-glow);
 }
 
-/* Hero Section */
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
@@ -170,7 +167,6 @@ nav ul li a:hover {
     max-width: 700px;
 }
 
-/* Main Menu Container */
 .menu-container {
     padding: 3rem 5%;
     max-width: 1200px;
@@ -186,7 +182,6 @@ nav ul li a:hover {
     text-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
 }
 
-/* Search Box */
 .search-box {
     position: relative;
     width: 30%;
@@ -219,7 +214,6 @@ body.rtl-mode .search-box i {
     left: 15px;
 }
 
-/* Cart Icon */
 .cart-icon {
     position: relative;
     cursor: pointer;
@@ -237,7 +231,6 @@ body.rtl-mode .search-box i {
     border-radius: 50%;
 }
 
-/* Cart Sidebar */
 .cart-sidebar {
     position: fixed;
     right: -400px;
@@ -281,7 +274,6 @@ body.rtl-mode .cart-sidebar.active { left: 0; }
 }
 .btn-whatsapp { width: 100%; padding: 15px; background: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-/* Menu Items Adjustments */
 .menu-item button {
     background: var(--accent-orange);
     color: white;
@@ -373,7 +365,6 @@ body.rtl-mode .cart-sidebar.active { left: 0; }
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-/* Footer */
 footer {
     background: var(--section-bg-darker);
     padding: 4rem 5% 2rem;
@@ -410,7 +401,6 @@ footer {
     color: rgba(255,255,255,0.4);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
